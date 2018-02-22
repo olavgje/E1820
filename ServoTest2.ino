@@ -9,7 +9,8 @@ void setup() {
 
   pinMode(1,OUTPUT);
   pinMode(2,INPUT);
-  servo1.attach(14); //analog pin 0
+  servo1.attach(14); //UNO: 14 = analog pin 0
+                     //MEGA: 54 = analog pin 0
   //servo1.setMaximumPulse(2000);
   //servo1.setMinimumPulse(700);
 
