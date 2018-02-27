@@ -4,28 +4,42 @@ This function takes input for controlling the "Griper Robot".
 Descrition for input:
 
 movementDirection:   HIGH - forward / LOW - backward
-movementSpeed:       min value: 200 (?) --> fast
-                     max value: 2000 (?) --> slow
-distance:            distance for travle in MICROmeter (1mm = 1000 micrometer)                 
+distance:            distance for travle in mm                
 */ 
 
-void griperMove(int movementDirection, int movementSpeed, double distance) {
+void griperMove(int movementDirection, double distance) {
   griperStatus = 0; 
-  int loops;
+  int pulsSpeed;
+  
+  long previousMicros = 0;
+  
   double numberOfPulses = 10;
-    numberOfPulses = (distance / 8) ;
+  numberOfPulses = ((distance) / 10) ;
+
  
   
-  for (int i = 0; i <= numberOfPulses; i++) {
-    numberOfPulses = (distance / 8) ; // NOT CALIBRATED! 
+  for (double i = 0; i <= numberOfPulses; 0) {
+    numberOfPulses = ((distance) / 10) ; 
+      
+    // SpeedAlgorithm:
+    if ((i < 3000) || (i > (numberOfPulses - 3000))) {
+    pulsSpeed = speedAlgorithm(distance, i); 
+    }
     
-    // Failsafe:
-    if ((digitalRead(limSwitchBack) == HIGH) && (digitalRead(limSwitchFront) == HIGH)) {
-    // Moveing the griper:
-      digitalWrite(dirPin, movementDirection);
-      digitalWrite(pulPin, HIGH);
-      digitalWrite(pulPin, LOW);
-      delayMicroseconds(movementSpeed);
+    unsigned long currentMicros = micros();
+    if ((currentMicros - previousMicros) > pulsSpeed) {
+      previousMicros = currentMicros;
+      i = i+1;
+    
+      // Failsafe:
+      if ((digitalRead(limSwitchBack) == HIGH) && (digitalRead(limSwitchFront) == HIGH)) {
+         
+        // Moveing the griper:
+        digitalWrite(dirPin, movementDirection);
+        digitalWrite(pulPin, HIGH);
+        digitalWrite(pulPin, LOW);      
+    }
+    
     }
     
     
@@ -36,16 +50,5 @@ void griperMove(int movementDirection, int movementSpeed, double distance) {
 }
 
 
-
-/* 
-void limSwitchState() { 
-  
-  if (digitalRead(limSwitchBack) == LOW) { limSSBack = LOW; } 
-    else { (limSSBack = HIGH); }
-  if (digitalRead(limSwitchFront) == LOW) { limSSFront = LOW; } 
-    else { (limSSFront = HIGH); }
-}
-
-*/
   
 

@@ -10,3 +10,5 @@ int limSwitchBack = 22;
 int limSwitchFront = 23;
 int griperStatus;
 
+// TESTBRYTER: 
+int buttonPin = 53;

@@ -19,4 +19,6 @@ void setup() {
   delay(100);
   digitalWrite(enblPin, HIGH);
   
+// Testbutton:
+  pinMode(buttonPin, INPUT);
 }

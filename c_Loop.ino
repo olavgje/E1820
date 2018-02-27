@@ -1,17 +1,14 @@
 void loop() {
 
   
-    griperMove(LOW, 200, 120000);
-    griperMove(HIGH, 200, 80000);
-    griperMove(HIGH, 150, 40000);
-    griperMove(HIGH, 100, 80000);
-
-
+  if (digitalRead(buttonPin) == HIGH) {
+    griperMove(HIGH, 30000); 
+    delay(5000);
+    griperMove(LOW, 30000);
+    delay(5000);
+  }
+  
+ 
+ 
     
-    
-    
-/*
-  limSSBack = digitalRead(limSwitchBack);
-  Serial.println(limSSBack);
-  */
 }
