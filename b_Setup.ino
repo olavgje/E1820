@@ -19,6 +19,11 @@ void setup() {
   delay(100);
   digitalWrite(enblPin, HIGH);
   
+// Locking-mechanism for the griper:
+  pinMode(limSwitchInGriper, INPUT);
+  servo1.attach(54);
+  servo2.attach(55);
+  
 // Testbutton:
   pinMode(buttonPin, INPUT);
 }
