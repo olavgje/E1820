@@ -12,6 +12,7 @@ Description output:
 int DronePos:         HIGH - Dronearms in position / LOW - Waiting for drone
 */
 
+
 int DronePosFront;
 int DronePosBack;
 int DronePos;
@@ -31,4 +32,3 @@ if ((DronePosFront == HIGH) && (DronePosBack == HIGH) {
     
 if (DronePos == LOW) {
   Serial.print("Waiting for drone...");
-
