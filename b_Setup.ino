@@ -21,8 +21,18 @@ void setup() {
   
 // Locking-mechanism for the griper:
   pinMode(limSwitchInGriper, INPUT);
-  servo1.attach(54);
-  servo2.attach(55);
+  gripLeft.attach(54);            //analog pin 0
+  gripRight.attach(55);           //analog pin 1
+
+// LandingPlatform: 
+  pinMode(limSwitchFL, INPUT);
+  pinMode(limSwitchFR, INPUT);
+  pinMode(limSwitchBL, INPUT);
+  pinMode(limSwitchBR, INPUT);
+  landingPlatformFL.attach(56);   //analog pin 2
+  landingPlatformFR.attach(57);   //analog pin 3
+  landingPlatformBL.attach(58);   //analog pin 4
+  landingPlatformBR.attach(59);   //analog pin 5
   
 // Testbutton:
   pinMode(buttonPin, INPUT);

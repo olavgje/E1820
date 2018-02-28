@@ -1,5 +1,7 @@
 #include <Servo.h>
-Servo servo1; Servo servo2; Servo servo3; Servo servo4; Servo servo5; Servo servo6;
+Servo gripLeft; Servo gripRight; 
+Servo landingPlatformFL; Servo landingPlatformFR;
+Servo landingPlatformBL; Servo landingPlatformBR;
 
 /*
 Discription of the program
@@ -18,7 +20,15 @@ int limSwitchInGriper = 24;
 // analog pin 0
 // analog pin 1
 
-
+// LandingPlatform:
+int limSwitchFL = 25;
+int limSwitchFR = 26;
+int limSwitchBL = 27;
+int limSwitchBR = 28;
+// analog pin 2
+// analog pin 3
+// analog pin 4
+// analog pin 5
 
 // TESTBRYTER: 
 int buttonPin = 53;
