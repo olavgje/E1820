@@ -3,32 +3,25 @@ This function controls the sensors on the "LandingPlatform".
 
 Description intput:
 
-int limSwitchFL:      HIGH - Drone in position FL / LOW - Waiting for drone FL
-int limSwitchFR:      HIGH - Drone in position FR / LOW - Waiting for drone FR
-int limSwitchBL:      HIGH - Drone in position BL / LOW - Waiting for drone BL
-int limSwitchBR:      HIGH - Drone in position BR / LOW - Waiting for drone BR
+int limSwitchFL:      HIGH - Waiting for drone FL / LOW - Drone in position FL
+int limSwitchFR:      HIGH - Waiting for drone FR / LOW - Drone in position FR
+int limSwitchBL:      HIGH - Waiting for drone BL / LOW - Drone in position BL
+int limSwitchBR:      HIGH - Waiting for drone BR / LOW - Drone in position BR
 
 Description output:
-int DronePos:         HIGH - Dronearms in position / LOW - Waiting for drone
+int dronePosition:    HIGH - Dronearms in position / LOW - Waiting for drone
 */
 
-
-int DronePosFront;
-int DronePosBack;
-int DronePos;
-
-if ((digitalRead(limSwitchFL) == HIGH) && (digitalRead(limSwitchFR) == HIGH)) {
-  DronePosFront == HIGH;
+int dronePos(){
+  int dronePosition;
+  
+  if((digitalRead(limSwitchFL) == LOW) && (digitalRead(limSwitchFR) == LOW) && (digitalRead(limSwitchBL) == LOW) && (digitalRead(limSwitchBR) == LOW)) {
+    dronePosition == HIGH;
+    Serial.print("Drone in position!");
+  }
+  else {
+    dronePosition == LOW;
+    Serial.print("Awaiting drone...");
+  }
 }
 
-if ((digitalRead(limSwitchBL) == HIGH) && (digitalRead(limSwitchBR) == HIGH)) {
-  DronePosBack == HIGH;
-}
-
-if ((DronePosFront == HIGH) && (DronePosBack == HIGH) {
-  DronePos == HIGH;
-  Serial.print("Drone in position!");
-}
-    
-if (DronePos == LOW) {
-  Serial.print("Waiting for drone...");
