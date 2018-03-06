@@ -29,6 +29,6 @@ int droneLock(int dronePosition) {
       landingPlatformBR.write(90);
       droneLocking == LOW;
     }
-  result = droneLocking;
+  return droneLocking;
 }
 
