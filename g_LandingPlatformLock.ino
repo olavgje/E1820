@@ -15,18 +15,18 @@ int droneLock(int dronePosition) {
 
     if (dronePosition == HIGH){
       delay(500);
-      landingPlatformFL.write(0);
-      landingPlatformFR.write(180);
-      landingPlatformBL.write(0); 
-      landingPlatformBR.write(180);
+      landingPlatformFL.write(50);
+      landingPlatformFR.write(80);
+      landingPlatformBL.write(50); 
+      landingPlatformBR.write(100);
       droneLocking == HIGH;
     }
 
     else {
-      landingPlatformFL.write(90);
-      landingPlatformFR.write(90);
-      landingPlatformBL.write(90);
-      landingPlatformBR.write(90);
+      landingPlatformFL.write(95);
+      landingPlatformFR.write(35);
+      landingPlatformBL.write(18);
+      landingPlatformBR.write(135);
       droneLocking == LOW;
     }
   return droneLocking;
