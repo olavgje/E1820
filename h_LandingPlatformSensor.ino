@@ -16,12 +16,12 @@ int dronePos(){
   int dronePosition;
   
   if((digitalRead(limSwitchFL) == LOW) && (digitalRead(limSwitchFR) == LOW) && (digitalRead(limSwitchBL) == LOW) && (digitalRead(limSwitchBR) == LOW)) {
-    dronePosition == HIGH;
-    Serial.print("Drone in position!");
+    dronePosition = HIGH;
   }
-  else {
-    dronePosition == LOW;
-    Serial.print("Awaiting drone...");
-  }
+
+else {
+  dronePosition = LOW;
+}
+  return dronePosition;
 }
 
