@@ -5,19 +5,29 @@ void setup() {
   Serial.begin(9600);
   
 // GriperRobot:
-  pinMode(pulPin, OUTPUT);
-  pinMode(dirPin, OUTPUT);
-  pinMode(enblPin, OUTPUT);
+  pinMode(pulPinGriper, OUTPUT);
+  pinMode(dirPinGriper, OUTPUT);
+  pinMode(enblPinGriper, OUTPUT);
   pinMode(limSwitchBack, INPUT);
   pinMode(limSwitchFront, INPUT);
   
-  digitalWrite(pulPin, LOW);
-  digitalWrite(enblPin, LOW);
-  digitalWrite(dirPin, LOW);
+  digitalWrite(pulPinGriper, LOW);
+  digitalWrite(enblPinGriper, LOW);
+  digitalWrite(dirPinGriper, LOW);
 
-  digitalWrite(enblPin, HIGH);
+  digitalWrite(enblPinGriper, HIGH);
   delay(100);
-  digitalWrite(enblPin, HIGH);
+  digitalWrite(enblPinGriper, HIGH);
+  
+  pinMode(limSwitchBack, INPUT);
+  pinMode(limSwitchFront, INPUT);
+  pinMode(limSwitchUnderMagazine, INPUT);
+
+// MagazineRobot: 
+  
+  
+  pinMode(limSwitchLeft, INPUT);
+  pinMode(limSwitchRight, INPUT);
   
 // Locking-mechanism for the griper:
   pinMode(limSwitchInGriper, INPUT);
