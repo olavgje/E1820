@@ -21,7 +21,8 @@ void setup() {
   
   pinMode(limSwitchBack, INPUT);
   pinMode(limSwitchFront, INPUT);
-  pinMode(limSwitchUnderMagazine, INPUT);
+  pinMode(limSwitchUnderMagazine1, INPUT);
+  pinMode(limSwitchUnderMagazine2, INPUT);
 
 // MagazineRobot: 
   
