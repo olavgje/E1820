@@ -3,12 +3,13 @@ This function takes input for controlling the "Griper Robot".
 
 Descrition for input:
 
-movementDirection:   HIGH - forward / LOW - backward
-distance:            distance for travle in mm                
+movementDirection:   LOW - forward / HIGH - backward
+distance:            distance for travle in MICROmeter 
+constSpeed:          HIGH - constant speed / LOW - speed algorithm
 */ 
 
-void griperMove(int movementDirection, double distance) {
-  griperStatus = 0; 
+void griperMove(int movementDirection, double distance, int constSpeed) {
+  griperRobotStatus = 0; 
   int pulsSpeed;
   
   long previousMicros = 0;
@@ -22,8 +23,13 @@ void griperMove(int movementDirection, double distance) {
     numberOfPulses = ((distance) / 10) ; 
       
     // SpeedAlgorithm:
-    if ((i < 3000) || (i > (numberOfPulses - 3000))) {
-    pulsSpeed = speedAlgorithm(distance, i); 
+    if (constSpeed == LOW) {
+      if ((i < 3000) || (i > (numberOfPulses - 3000))) {
+      pulsSpeed = speedAlgorithm(distance, i); 
+      }
+    }
+    if (constSpeed == HIGH) {
+      pulsSpeed = 350;
     }
     
     unsigned long currentMicros = micros();
@@ -32,20 +38,23 @@ void griperMove(int movementDirection, double distance) {
       i = i+1;
     
       // Failsafe:
-      if ((digitalRead(limSwitchBack) == HIGH) && (digitalRead(limSwitchFront) == HIGH)) {
-         
+      
+      if (((digitalRead(limSwitchBack) == LOW) && (movementDirection == LOW)) || ((digitalRead(limSwitchFront) == LOW) && (movementDirection == HIGH)) || ((digitalRead(limSwitchBack) == HIGH) && (digitalRead(limSwitchFront) == HIGH)))  { 
         // Moveing the griper:
-        digitalWrite(dirPin, movementDirection);
-        digitalWrite(pulPin, HIGH);
-        digitalWrite(pulPin, LOW);      
-    }
+        digitalWrite(dirPinGriper, movementDirection);
+        digitalWrite(pulPinGriper, HIGH);
+        digitalWrite(pulPinGriper, LOW);      
+      }
+      if ((digitalRead(limSwitchBack) == LOW) && (movementDirection == HIGH)){ break; }
+      if ((digitalRead(limSwitchFront) == LOW) && (movementDirection == LOW)) { break; }
+    
     
     }
     
     
   }
   
-  griperStatus = 1; 
+  griperRobotStatus = 1; 
   
 }
 

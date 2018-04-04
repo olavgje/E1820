@@ -20,18 +20,18 @@ int griperRobotStatus;
 int pulPinMagazine = 5;
 int dirPinMagazine = 6;
 int enblPinMagazine = 7;
-int limSwitchLeft = 24;
-int limSwitchRight = 25;
+int limSwitchLeft = 29;
+int limSwitchRight = 30;
 
 // Locking-mechanism for the griper:
-int limSwitchInGriper = 26;
+int limSwitchInGriper = 24;
 // analog pin 0,1
 
 // LandingPlatform:
-int limSwitchFL = 27;
-int limSwitchFR = 28;
-int limSwitchBL = 29;
-int limSwitchBR = 30;
+int limSwitchFL = 25;
+int limSwitchFR = 26;
+int limSwitchBL = 27;
+int limSwitchBR = 28;
 // analog pin 2,3,4,5
 
 

@@ -1,8 +1,14 @@
 void loop() {
+  Serial.println(digitalRead(limSwitchBack));
+  delay(500);
+  
 
 
-droneLock(LOW);
-delay(5000);
-
+  
+ 
+ 
     
 }
+
+
+

@@ -44,6 +44,5 @@ void setup() {
   landingPlatformBL.attach(58);   //analog pin 4
   landingPlatformBR.attach(59);   //analog pin 5
   
-// Testbutton:
-  pinMode(buttonPin, INPUT);
+  calibration();
 }

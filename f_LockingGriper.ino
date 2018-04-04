@@ -1,4 +1,3 @@
-
 /* 
 This function takes input for locking/opening the griper. 
 
