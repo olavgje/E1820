@@ -12,13 +12,19 @@ int speedAlgorithm(double distance, double i) {
   float RPSspeed;
   int pulsSpeed; 
   
-  int A = 300; 
+  int A = 100; 
   float k = (3.1415/numberOfPulses);
-  int d = 8; // (Min speed) 
+  int d = 15; // (Min speed) 
+
+  if (i > (numberOfPulses - 3000)) {
+    A = 100;
+  }
 
   RPSspeed = A*sin(k*i) + d;
   if (RPSspeed >= 25 ) { RPSspeed = 25 ; }
+  
   pulsSpeed = 1000000/(RPSspeed*200);  
+
     
   return pulsSpeed;
 
