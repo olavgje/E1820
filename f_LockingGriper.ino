@@ -20,4 +20,3 @@ void griperLock(int batteryChanged) {
     delay(500);
   }  
 }
-
