@@ -13,7 +13,8 @@ int dirPinGriper = 3;
 int enblPinGriper = 4;
 int limSwitchBack = 22;
 int limSwitchFront = 23;
-int limSwitchUnderMagazine = 31; 
+int limSwitchUnderMagazine1 = 31; 
+int limSwitchUnderMagazine2 = 32; 
 int griperRobotStatus;
 
 // MagazineRobot:
@@ -30,7 +31,7 @@ int limSwitchInGriper = 24;
 // LandingPlatform:
 int limSwitchFL = 25;
 int limSwitchFR = 26;
-int limSwitchBL = 27;
+int limSwitchBL = 40;
 int limSwitchBR = 28;
 // analog pin 2,3,4,5
 
