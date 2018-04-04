@@ -8,7 +8,7 @@ distance:            distance for travle in MICROmeter
 constSpeed:          HIGH - constant speed / LOW - speed algorithm
 */ 
 
-void griperMove(int movementDirection, double distance, int constSpeed) {
+void griperMove(int movementDirection, double distance) {
   griperRobotStatus = 0; 
   int pulsSpeed;
   
@@ -21,16 +21,11 @@ void griperMove(int movementDirection, double distance, int constSpeed) {
   
   for (double i = 0; i <= numberOfPulses; 0) {
     numberOfPulses = ((distance) / 10) ; 
-      
-    // SpeedAlgorithm:
-    if (constSpeed == LOW) {
-      if ((i < 3000) || (i > (numberOfPulses - 3000))) {
+     
+    if ((i < 3000) || (i > (numberOfPulses - 3000))) {
       pulsSpeed = speedAlgorithm(distance, i); 
-      }
     }
-    if (constSpeed == HIGH) {
-      pulsSpeed = 350;
-    }
+
     
     unsigned long currentMicros = micros();
     if ((currentMicros - previousMicros) > pulsSpeed) {
@@ -45,8 +40,10 @@ void griperMove(int movementDirection, double distance, int constSpeed) {
         digitalWrite(pulPinGriper, HIGH);
         digitalWrite(pulPinGriper, LOW);      
       }
-      if ((digitalRead(limSwitchBack) == LOW) && (movementDirection == HIGH)){ break; }
-      if ((digitalRead(limSwitchFront) == LOW) && (movementDirection == LOW)) { break; }
+      if ((digitalRead(limSwitchBack) == LOW) && (movementDirection == HIGH)){ 
+        delay(50);
+        break; 
+      }
     
     
     }
@@ -57,7 +54,4 @@ void griperMove(int movementDirection, double distance, int constSpeed) {
   griperRobotStatus = 1; 
   
 }
-
-
-  
 
