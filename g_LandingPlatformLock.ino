@@ -10,10 +10,10 @@ Description output:
 int droneLocking      HIGH - Drone locked / LOW - Drone 
 */
 
-int droneLock(int landingSensor, int changedBattery) {
+int droneLock(int landingSensor, int batteryChanged) {
   int droneLocking;
 
-    if ((landingSensor == HIGH) && (changedBattery == LOW)) {
+    if ((landingSensor == HIGH) && (batteryChanged == LOW)) {
       delay(500);
       landingPlatformFL.write(50);
       landingPlatformFR.write(80);
