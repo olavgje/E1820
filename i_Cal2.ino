@@ -10,7 +10,8 @@ void calibrateVar2() {
    While the slot == 0 {
      Move griper slowly back
    }
-  
+   
+   Open griper
    Move griper forward until clear of magazine
    Move griper back until limSwitchBack == LOW
    Move magazine to standby
