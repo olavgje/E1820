@@ -25,7 +25,17 @@ void setup() {
   pinMode(limSwitchUnderMagazine2, INPUT);
 
 // MagazineRobot: 
+  pinMode(pulPinMagazine, OUTPUT);
+  pinMode(dirPinMagazine, OUTPUT);
+  pinMode(enblPinMagazine, OUTPUT);
   
+  digitalWrite(pulPinMagazine, LOW);
+  digitalWrite(enblPinMagazine, LOW);
+  digitalWrite(dirPinMagazine, LOW);
+
+  digitalWrite(enblPinMagazine, HIGH);
+  delay(100);
+  digitalWrite(enblPinMagazine, HIGH);  
   
   pinMode(limSwitchLeft, INPUT);
   pinMode(limSwitchRight, INPUT);
@@ -46,4 +56,5 @@ void setup() {
   landingPlatformBR.attach(59);   //analog pin 5
   
   calibration();
+  
 }
