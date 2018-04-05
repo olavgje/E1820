@@ -36,5 +36,4 @@ int limSwitchBR = 28;
 // analog pin 2,3,4,5
 
 
-// TESTBRYTER: 
-int buttonPin = 53;
+int fromSlot;
