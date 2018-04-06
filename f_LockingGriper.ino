@@ -3,20 +3,19 @@ This function takes input for locking/opening the griper.
 
 Descrition for input:
 
-griperStatus:     HIGH - Open griper / LOW - Lock griper
+inGriper:     HIGH - Battery in griper              / LOW - No battery in griper
+lockBattery:  HIGH - Hold battery in griper         / LOW - Release battery from griper
           
 */ 
 
-void griperLock(int batteryChanged) {
+void griperLock(int inGriper, int lockBattery) {
 
-  if ((digitalRead(limSwitchInGriper == LOW)) && (batteryChanged == LOW)){
-    gripLeft.write(90);
-    gripRight.write(80);
-    delay(500);
+  if (inGriper == LOW && lockBattery == HIGH){
+    gripLeft.write(95);
+    gripRight.write(50);
   }
-  if (batteryChanged == HIGH)  {
+  else {
     gripLeft.write(0);
-    gripRight.write(180);
-    delay(500);
+    gripRight.write(160);
   }  
 }
