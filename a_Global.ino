@@ -37,3 +37,10 @@ int limSwitchBR = 28;
 
 
 int fromSlot;
+
+// Loop:
+int batteryChanged;
+int lockBattery;
+int landingSensor;
+int inGriper;
+
