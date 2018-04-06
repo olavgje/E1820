@@ -35,12 +35,9 @@ int limSwitchBL = 40;
 int limSwitchBR = 28;
 // analog pin 2,3,4,5
 
-
+// General
 int fromSlot;
-
-// Loop:
 int batteryChanged;
 int lockBattery;
 int landingSensor;
 int inGriper;
-

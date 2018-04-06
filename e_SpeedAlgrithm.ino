@@ -7,14 +7,14 @@ Descrition for input:
                 
 */ 
 
-int speedAlgorithm(double distance, double i) {
-  double numberOfPulses = (distance / 10);
+int speedAlgorithm(double totalDistance, double i) {
+  double numberOfPulses = (totalDistance / 10);
   float RPSspeed;
   int pulsSpeed; 
   
   int A = 100; 
   float k = (3.1415/numberOfPulses);
-  int d = 15; // (Min speed) 
+  int d = 10; // (Min speed) 
 
   if (i > (numberOfPulses - 3000)) {
     A = 100;

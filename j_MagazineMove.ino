@@ -4,31 +4,38 @@
 6-3: 20670  6970
 6-2: 27600  6930
 6-1: 34500  6900
-
   int pos2to1 = 6900;
   int pos3to2 = 6930;
   int pos4to3 = 6970;
   int pos5to4 = 6930;
   int pos6to5 = 6770;
   int pos6 = 0;
-
 */
 
 void magazineMove(int toSlot) {
   int movementDirection;
   double numberOfPulses;
+
   
-  if ((fromSlot - toSlot) >> 0) {
+  delay(100);
+  if ((fromSlot - toSlot) > 0) {
     movementDirection = LOW;
   }
+  delay(100);
 
-  if ((fromSlot - toSlot) << 0) {
+  if ((fromSlot - toSlot) < 0) {
     movementDirection = HIGH;
   }
+  delay(100);
 
   if ((fromSlot - toSlot) == 0) {
     numberOfPulses = 0;
   }
+  
+  if (fromSlot == 6) {
+    movementDirection = LOW;
+  }
+  delay(100);
 
 
   if ((fromSlot == 6 && toSlot == 1) || (fromSlot == 1 && toSlot == 6)) { numberOfPulses = 34500; }
@@ -48,19 +55,31 @@ void magazineMove(int toSlot) {
   if ((fromSlot == 2 && toSlot == 1) || (fromSlot == 1 && toSlot == 2)) { numberOfPulses = 6900; }
 
  // ALERT: It is possible that the magazine never get to slot 6, remember to put in loop!
+  delay(50);
 
+  if (((digitalRead(limSwitchUnderMagazine1)) == HIGH) && ((digitalRead(limSwitchUnderMagazine2)) == HIGH)) {
   for (double i = 0; i <= numberOfPulses; i++) {
-    if (((digitalRead(limSwitchLeft) == LOW) && (movementDirection == LOW)) || ((digitalRead(limSwitchRight) == LOW) && (movementDirection == HIGH)) || ((digitalRead(limSwitchBack) == HIGH) && (digitalRead(limSwitchFront) == HIGH))) {
+    if (((digitalRead(limSwitchLeft) == LOW) && (movementDirection == LOW)) || ((digitalRead(limSwitchRight) == LOW) && (movementDirection == HIGH)) || ((digitalRead(limSwitchLeft) == HIGH) && (digitalRead(limSwitchRight) == HIGH))) {
       digitalWrite(dirPinMagazine, movementDirection);
       digitalWrite(pulPinMagazine, HIGH);
       digitalWrite(pulPinMagazine, LOW);   
       delayMicroseconds(300);
     }
-    if ((digitalRead(limSwitchLeft) == LOW) && (movementDirection == HIGH)){ 
-        delay(50);
-        break;
+      if ((digitalRead(limSwitchLeft) == LOW) && (movementDirection == HIGH)){ 
+          delay(50);
+          break;
+      }
     }
   }
+  delay(100);
+  
+  fromSlot = toSlot;
+
+  if ((digitalRead(limSwitchRight) == LOW)) { 
+    calibration(); 
+  }
+  
+
+  
 
 }
-

@@ -1,12 +1,8 @@
 /*
 This function controls the servos on the "LandingPlatform".
-
 Description intput:
-
 int dronePosition     HIGH - Drone in position / LOW - Awaiting drone
-
 Description output:
-
 int droneLocking      HIGH - Drone locked / LOW - Drone 
 */
 

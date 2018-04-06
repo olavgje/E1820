@@ -1,8 +1,6 @@
 /* 
 This function takes input for locking/opening the griper. 
-
 Descrition for input:
-
 inGriper:     HIGH - Battery in griper              / LOW - No battery in griper
 lockBattery:  HIGH - Hold battery in griper         / LOW - Release battery from griper
           

@@ -1,6 +1,9 @@
 
 void setup() {
   
+  droneLock(LOW, LOW);
+  griperLock(HIGH, HIGH);
+  
 // General   
   Serial.begin(9600);
   
@@ -55,6 +58,6 @@ void setup() {
   landingPlatformBL.attach(58);   //analog pin 4
   landingPlatformBR.attach(59);   //analog pin 5
   
-  //calibration();
-  
+  calibration();
+
 }

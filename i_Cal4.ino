@@ -8,10 +8,12 @@ void calibrateVar4() {
   
   while (digitalRead(limSwitchLeft) == HIGH) {
     // Moves the magazine to "standby":
-    digitalWrite(dirPinMagazine, HIGH);
-    digitalWrite(pulPinMagazine, HIGH);
-    digitalWrite(pulPinMagazine, LOW);   
-    delayMicroseconds(300);      
+    if (((digitalRead(limSwitchUnderMagazine1)) == HIGH) && ((digitalRead(limSwitchUnderMagazine2)) == HIGH)) {
+      digitalWrite(dirPinMagazine, HIGH);
+      digitalWrite(pulPinMagazine, HIGH);
+      digitalWrite(pulPinMagazine, LOW);   
+      delayMicroseconds(300); 
+    }    
   } 
   
   /*
