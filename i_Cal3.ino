@@ -26,7 +26,7 @@ void calibrateVar3() {
   delay(500);
   if (digitalRead(limSwitchBack) == LOW) {
     // Moves the griper to "standby"
-    griperMove(LOW, 330000, 3000, 3000);
+    griperMove(LOW, 33000, 3000, 3000);
   }
   
 }

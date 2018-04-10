@@ -4,9 +4,9 @@ This function takes input for controlling the "Griper Robot".
 Descrition for input:
 
 movementDirection:   LOW - forward / HIGH - backward
-distance:            distance for total travle in MICROmeter 
-softStartDistance:   distance for soft start in ??
-softEndDistance:     distance for soft end in ?? 
+distance:            distance for total travle in X times 100 millimeter, 140 mm = 14 000 
+softStartDistance:   distance for soft start in X times 100 millimeter
+softEndDistance:     distance for soft end in X times 100 millimeter 
 
 */ 
 
@@ -16,12 +16,12 @@ void griperMove(int movementDirection, double totalDistance, double softStartDis
   long previousMicros = 0;
   
   double numberOfPulses = 10;
-  numberOfPulses = ((totalDistance) / 10) ;
+  numberOfPulses = (totalDistance);
 
  
   
   for (double i = 0; i <= numberOfPulses; 0) {
-    numberOfPulses = ((totalDistance) / 10) ; 
+    numberOfPulses = (totalDistance) ; 
      
     if ((i < softStartDistance) || (i > (numberOfPulses - softEndDistance))) {
       pulsSpeed = speedAlgorithm(totalDistance, i); 
@@ -54,6 +54,13 @@ void griperMove(int movementDirection, double totalDistance, double softStartDis
   
   
 }
+
+/*
+Distances: 
+Standby position - drone :   14 800 pulses
+Standby position - magazine: 17 300 pulses
+Magazine - limitSwitchBack:  15 700 pulses
+*/
 
 
   

@@ -8,24 +8,19 @@ Descrition for input:
 */ 
 
 int speedAlgorithm(double totalDistance, double i) {
-  double numberOfPulses = (totalDistance / 10);
+  double numberOfPulses = (totalDistance);
   float RPSspeed;
   int pulsSpeed; 
   
-  int A = 100; 
+  int A = 50; 
   float k = (3.1415/numberOfPulses);
   int d = 10; // (Min speed) 
-
-  if (i > (numberOfPulses - 3000)) {
-    A = 100;
-  }
 
   RPSspeed = A*sin(k*i) + d;
   if (RPSspeed >= 25 ) { RPSspeed = 25 ; }
   
   pulsSpeed = 1000000/(RPSspeed*200);  
-
-    
+ 
   return pulsSpeed;
 
 }

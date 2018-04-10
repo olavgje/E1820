@@ -58,16 +58,17 @@ void magazineMove(int toSlot) {
   delay(50);
 
   if (((digitalRead(limSwitchUnderMagazine1)) == HIGH) && ((digitalRead(limSwitchUnderMagazine2)) == HIGH)) {
-  for (double i = 0; i <= numberOfPulses; i++) {
-    if (((digitalRead(limSwitchLeft) == LOW) && (movementDirection == LOW)) || ((digitalRead(limSwitchRight) == LOW) && (movementDirection == HIGH)) || ((digitalRead(limSwitchLeft) == HIGH) && (digitalRead(limSwitchRight) == HIGH))) {
-      digitalWrite(dirPinMagazine, movementDirection);
-      digitalWrite(pulPinMagazine, HIGH);
-      digitalWrite(pulPinMagazine, LOW);   
-      delayMicroseconds(300);
-    }
+    for (double i = 0; i <= numberOfPulses; i++) {
+      if (((digitalRead(limSwitchLeft) == LOW) && (movementDirection == LOW)) || ((digitalRead(limSwitchRight) == LOW) && (movementDirection == HIGH)) || ((digitalRead(limSwitchLeft) == HIGH) && (digitalRead(limSwitchRight) == HIGH))) {
+        digitalWrite(dirPinMagazine, movementDirection);
+        digitalWrite(pulPinMagazine, HIGH);
+        digitalWrite(pulPinMagazine, LOW);   
+        delayMicroseconds(300);
+      }
+    
       if ((digitalRead(limSwitchLeft) == LOW) && (movementDirection == HIGH)){ 
-          delay(50);
-          break;
+        delay(50);
+        break;
       }
     }
   }

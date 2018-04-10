@@ -43,6 +43,13 @@ void setup() {
   pinMode(limSwitchLeft, INPUT);
   pinMode(limSwitchRight, INPUT);
   
+// Charging
+  pinMode(charger1, INPUT);
+  pinMode(charger2, INPUT);
+  pinMode(charger3, INPUT);
+  pinMode(charger4, INPUT);
+  pinMode(charger5, INPUT);
+  
 // Locking-mechanism for the griper:
   pinMode(limSwitchInGriper, INPUT);
   gripLeft.attach(54);            //analog pin 0
