@@ -36,6 +36,7 @@ int limSwitchBR = 28;
 // analog pin 2,3,4,5
 
 // General
+int toSlot;
 int fromSlot;
 int batteryChanged;
 int lockBattery;

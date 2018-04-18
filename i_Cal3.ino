@@ -15,7 +15,7 @@ void calibrateVar3() {
       delayMicroseconds(300);  
     }    
   }  
-  
+
   while (digitalRead(limSwitchBack) == HIGH) {
     // Moves the griper back:
     digitalWrite(dirPinGriper, HIGH);
@@ -23,6 +23,7 @@ void calibrateVar3() {
     digitalWrite(pulPinGriper, LOW);   
     delayMicroseconds(300);
   }
+  
   delay(500);
   if (digitalRead(limSwitchBack) == LOW) {
     // Moves the griper to "standby"

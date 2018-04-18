@@ -1,34 +1,74 @@
 void loop() { 
 
-
   
-
-/*  
-  if (digitalRead(limSwitchFront) == LOW) {
-    delay(2000);
-    magazineMove(3);
-    delay(1000);
-    griperLock(LOW, HIGH);
-    delay(1000);
-    griperMove(HIGH, 17300, 7000, 10000);
-    delay(500);
-    griperLock(LOW, LOW);
-    delay(5000);
-    griperMove(HIGH, 15700, 3000, 3000); 
-    delay(5000);
-    griperMove(LOW, 15700, 3000, 3000);
-    delay(3000);
-    griperLock(LOW, HIGH);
-    delay(3000);
-    griperMove(LOW, 17300, 7000, 10000);
-    
+  
+  
+  // Move the magazine to an open slot.
+  delay(100);
+  int moveToSlot = openSlot(); 
+  if ((moveToSlot != toSlot) || (fromSlot == 6)){
+    magazineMove(moveToSlot);
+    toSlot = moveToSlot;
   }
-*/ 
+
+  // Lock drone, and place griper under the drone
+  int droneInPosition = dronePos();
+  if (droneInPosition == HIGH) {
+    delay(500);
+    droneLock(LOW);
+    griperMove(LOW, 14850, 1000, 8000);
+    delay(100);
+    inGriper = digitalRead(limSwitchInGriper);
+    delay(100);
+    int var;
+    if (inGriper == LOW) { var = 0; }
+    if (inGriper == HIGH) { var = 1; }
+
+
+    switch(var) {
+      case 0: 
+        griperLock(inGriper, HIGH);
+        delay(100);
+        griperMove(HIGH, 32350, 8000, 13000);
+        delay(100);
+        griperLock(inGriper, LOW);
+        delay(100);
+        griperMove(HIGH, 15500, 3000, 3000); 
+        // Griper is all the way back.
+        
+        int mostChargedBattery;
+        mostChargedBattery = chargedBattery();
+        magazineMove(mostChargedBattery); 
+        griperMove(LOW, 15500, 3000, 3000);
+        delay(100);
+        // Griper is under the magazine, ready to pick up a battery. 
+
+        griperLock(LOW, HIGH);
+        delay(100);
+        griperMove(LOW, 32350, 13000, 8000);
+        delay(100);
+        griperLock(LOW, LOW);
+        delay(100);
+        griperMove(HIGH, 14850, 8000, 3000);    
+        // Griper is in standby position
+        
+        droneLock(HIGH); 
+       droneInPosition = dronePos();
+       while (droneInPosition == HIGH) {
+        droneInPosition = dronePos();
+        delay(500);
+       }
+        break;
+
+
+      case 1:
+        droneLock(HIGH);
+        calibration();
+        break;
+    }
+      
+  }
 
 }
-
-
-
-
 
 

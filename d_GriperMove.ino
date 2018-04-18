@@ -57,7 +57,7 @@ void griperMove(int movementDirection, double totalDistance, double softStartDis
 
 /*
 Distances: 
-Standby position - drone :   14 800 pulses
+Standby position - drone :   14 900 pulses
 Standby position - magazine: 17 300 pulses
 Magazine - limitSwitchBack:  15 700 pulses
 */

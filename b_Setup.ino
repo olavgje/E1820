@@ -1,7 +1,7 @@
 
 void setup() {
   
-  droneLock(LOW, LOW);
+  droneLock(HIGH);
   griperLock(HIGH, HIGH);
   
 // General   

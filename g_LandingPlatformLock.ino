@@ -1,16 +1,16 @@
 /*
 This function controls the servos on the "LandingPlatform".
 Description intput:
-int dronePosition     HIGH - Drone in position / LOW - Awaiting drone
+int batteryChanged        LOW - Lock / HIGH - Release
 Description output:
 int droneLocking      HIGH - Drone locked / LOW - Drone 
 */
 
-int droneLock(int landingSensor, int batteryChanged) {
+int droneLock(int batteryChanged) {
   int droneLocking;
 
-    if ((landingSensor == HIGH) && (batteryChanged == LOW)) {
-      delay(500);
+    if (batteryChanged == LOW) {
+      delay(100);
       landingPlatformFL.write(50);
       landingPlatformFR.write(80);
       landingPlatformBL.write(50); 

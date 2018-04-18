@@ -20,11 +20,11 @@ SETUP
 
 int openSlot() {
   int openCharger;
-  if (analogRead(6) == 0) { openCharger = 1; }
-  if (analogRead(7) == 0) { openCharger = 2; }
-  if (analogRead(8) == 0) { openCharger = 3; }
-  if (analogRead(9) == 0) { openCharger = 4; }
-  if (analogRead(10) == 0) { openCharger = 5; }
+  if (analogRead(7) < 100) { openCharger = 2; }
+  if (analogRead(8) < 100) { openCharger = 3; }
+  if (analogRead(9) < 100) { openCharger = 4; }
+  if (analogRead(10) < 100) { openCharger = 5; }
+ 
   return openCharger;
 }
 
