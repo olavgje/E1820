@@ -1,7 +1,7 @@
 /*
-6-5: 6770   
-6-4: 13700  6930
-6-3: 20720  7020
+6-5: 6770                 KALIBRERT
+6-4: 13690  6920          KALIBRERT
+6-3: 20600  6910
 6-2: 27600  6980
 6-1: 34500  6900
   int pos2to1 = 6900;
@@ -40,9 +40,9 @@ void magazineMove(int toSlot) {
 // POSISJON 3 HAR FEIL 
   if ((fromSlot == 6 && toSlot == 1) || (fromSlot == 1 && toSlot == 6)) { numberOfPulses = 34500; }
   if ((fromSlot == 6 && toSlot == 2) || (fromSlot == 2 && toSlot == 6)) { numberOfPulses = 27650; }
-  if ((fromSlot == 6 && toSlot == 3) || (fromSlot == 3 && toSlot == 6)) { numberOfPulses = 20720; }
-  if ((fromSlot == 6 && toSlot == 4) || (fromSlot == 4 && toSlot == 6)) { numberOfPulses = 13700; }
-  if ((fromSlot == 6 && toSlot == 5) || (fromSlot == 5 && toSlot == 6)) { numberOfPulses = 6770; }
+  if ((fromSlot == 6 && toSlot == 3) || (fromSlot == 3 && toSlot == 6)) { numberOfPulses = 20600; }
+  if ((fromSlot == 6 && toSlot == 4) || (fromSlot == 4 && toSlot == 6)) { numberOfPulses = 13690; }   // KALIBRERT
+  if ((fromSlot == 6 && toSlot == 5) || (fromSlot == 5 && toSlot == 6)) { numberOfPulses = 6770; }    // KALIBRERT
   if ((fromSlot == 5 && toSlot == 1) || (fromSlot == 1 && toSlot == 5)) { numberOfPulses = 27730; }
   if ((fromSlot == 5 && toSlot == 2) || (fromSlot == 2 && toSlot == 5)) { numberOfPulses = 20880; }
   if ((fromSlot == 5 && toSlot == 3) || (fromSlot == 3 && toSlot == 5)) { numberOfPulses = 13950; }
