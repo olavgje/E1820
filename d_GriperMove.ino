@@ -11,7 +11,7 @@ softEndDistance:     distance for soft end in X times 100 millimeter
 */ 
 
 void griperMove(int movementDirection, double totalDistance, double softStartDistance, double softEndDistance ) {
-  int pulsSpeed;
+  int pulsSpeed = 250;
   
   long previousMicros = 0;
   
@@ -22,12 +22,12 @@ void griperMove(int movementDirection, double totalDistance, double softStartDis
   
   for (double i = 0; i <= numberOfPulses; 0) {
     numberOfPulses = (totalDistance) ; 
-     
+    
     if ((i < softStartDistance) || (i > (numberOfPulses - softEndDistance))) {
       pulsSpeed = speedAlgorithm(totalDistance, i); 
     }
 
-    
+   
     unsigned long currentMicros = micros();
     if ((currentMicros - previousMicros) > pulsSpeed) {
       previousMicros = currentMicros;
@@ -57,9 +57,11 @@ void griperMove(int movementDirection, double totalDistance, double softStartDis
 
 /*
 Distances: 
-Standby position - drone :   14 900 pulses
-Standby position - magazine: 17 300 pulses
-Magazine - limitSwitchBack:  15 700 pulses
+Standby position - drone :   14 850 pulses
+Standby position - magazine: 17 500 pulses
+Magazine - limitSwitchBack:  15 500 pulses
+
+Standby position - limSwitchUmderMagazine2: 4100 pulses
 */
 
 

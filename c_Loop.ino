@@ -1,8 +1,6 @@
 void loop() { 
-
-  
-  
-  
+}
+/*
   // Move the magazine to an open slot.
   delay(100);
   int moveToSlot = openSlot(); 
@@ -16,7 +14,7 @@ void loop() {
   if (droneInPosition == HIGH) {
     delay(500);
     droneLock(LOW);
-    griperMove(LOW, 14850, 1000, 8000);
+    griperMove(LOW, 14850, 3000, 3000);
     delay(100);
     inGriper = digitalRead(limSwitchInGriper);
     delay(100);
@@ -49,15 +47,15 @@ void loop() {
         delay(100);
         griperLock(LOW, LOW);
         delay(100);
-        griperMove(HIGH, 14850, 8000, 3000);    
+        griperMove(HIGH, 14850, 3000, 3000);    
         // Griper is in standby position
         
         droneLock(HIGH); 
-       droneInPosition = dronePos();
-       while (droneInPosition == HIGH) {
         droneInPosition = dronePos();
-        delay(500);
-       }
+        while (droneInPosition == HIGH) {
+          droneInPosition = dronePos();
+          delay(500);
+        }
         break;
 
 
@@ -70,5 +68,4 @@ void loop() {
   }
 
 }
-
 

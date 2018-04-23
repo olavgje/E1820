@@ -10,7 +10,7 @@ void griperLock(int inGriper, int lockBattery) {
 
   if (inGriper == LOW && lockBattery == HIGH){
     gripLeft.write(95);
-    gripRight.write(50);
+    gripRight.write(48);
   }
   else {
     gripLeft.write(0);

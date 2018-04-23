@@ -1,15 +1,10 @@
 /*
-6-5: 6770                 KALIBRERT
-6-4: 13690  6920          KALIBRERT
-6-3: 20600  6910
-6-2: 27600  6980
-6-1: 34500  6900
-  int pos2to1 = 6900;
-  int pos3to2 = 6930;
-  int pos4to3 = 7020;
-  int pos5to4 = 6930;
-  int pos6to5 = 6770;
-  int pos6 = 0;
+6-5:  6770      6-5:  6770          KALIBRERT
+6-4: 13690      5-4:  6920          KALIBRERT
+6-3: 20600      4-3:  6910          KALIBRERT
+6-2: 27540      3-2:  6940          KALIBRERT
+6-1: 34500            6900          URELEVANT
+
 */
 
 void magazineMove(int toSlot) {
@@ -38,21 +33,21 @@ void magazineMove(int toSlot) {
   delay(50);
 
 // POSISJON 3 HAR FEIL 
-  if ((fromSlot == 6 && toSlot == 1) || (fromSlot == 1 && toSlot == 6)) { numberOfPulses = 34500; }
-  if ((fromSlot == 6 && toSlot == 2) || (fromSlot == 2 && toSlot == 6)) { numberOfPulses = 27650; }
-  if ((fromSlot == 6 && toSlot == 3) || (fromSlot == 3 && toSlot == 6)) { numberOfPulses = 20600; }
+  if ((fromSlot == 6 && toSlot == 1) || (fromSlot == 1 && toSlot == 6)) { numberOfPulses = 34500; }   // URELEVANT
+  if ((fromSlot == 6 && toSlot == 2) || (fromSlot == 2 && toSlot == 6)) { numberOfPulses = 27540; }   // KALIBRERT
+  if ((fromSlot == 6 && toSlot == 3) || (fromSlot == 3 && toSlot == 6)) { numberOfPulses = 20600; }   // KALIBRERT
   if ((fromSlot == 6 && toSlot == 4) || (fromSlot == 4 && toSlot == 6)) { numberOfPulses = 13690; }   // KALIBRERT
   if ((fromSlot == 6 && toSlot == 5) || (fromSlot == 5 && toSlot == 6)) { numberOfPulses = 6770; }    // KALIBRERT
-  if ((fromSlot == 5 && toSlot == 1) || (fromSlot == 1 && toSlot == 5)) { numberOfPulses = 27730; }
-  if ((fromSlot == 5 && toSlot == 2) || (fromSlot == 2 && toSlot == 5)) { numberOfPulses = 20880; }
-  if ((fromSlot == 5 && toSlot == 3) || (fromSlot == 3 && toSlot == 5)) { numberOfPulses = 13950; }
-  if ((fromSlot == 5 && toSlot == 4) || (fromSlot == 4 && toSlot == 5)) { numberOfPulses = 6930; }
-  if ((fromSlot == 4 && toSlot == 1) || (fromSlot == 1 && toSlot == 4)) { numberOfPulses = 20800; }
-  if ((fromSlot == 4 && toSlot == 2) || (fromSlot == 2 && toSlot == 4)) { numberOfPulses = 13950; }
-  if ((fromSlot == 4 && toSlot == 3) || (fromSlot == 3 && toSlot == 4)) { numberOfPulses = 7020; }
-  if ((fromSlot == 3 && toSlot == 1) || (fromSlot == 1 && toSlot == 3)) { numberOfPulses = 13830; }
-  if ((fromSlot == 3 && toSlot == 2) || (fromSlot == 2 && toSlot == 3)) { numberOfPulses = 6930; }
-  if ((fromSlot == 2 && toSlot == 1) || (fromSlot == 1 && toSlot == 2)) { numberOfPulses = 6900; }
+  if ((fromSlot == 5 && toSlot == 1) || (fromSlot == 1 && toSlot == 5)) { numberOfPulses = 27730; }   // URELEVANT
+  if ((fromSlot == 5 && toSlot == 2) || (fromSlot == 2 && toSlot == 5)) { numberOfPulses = 20770; }   // K
+  if ((fromSlot == 5 && toSlot == 3) || (fromSlot == 3 && toSlot == 5)) { numberOfPulses = 13830; }   // K
+  if ((fromSlot == 5 && toSlot == 4) || (fromSlot == 4 && toSlot == 5)) { numberOfPulses = 6920; }    // K
+  if ((fromSlot == 4 && toSlot == 1) || (fromSlot == 1 && toSlot == 4)) { numberOfPulses = 20800; }   // U
+  if ((fromSlot == 4 && toSlot == 2) || (fromSlot == 2 && toSlot == 4)) { numberOfPulses = 13850; }   // K
+  if ((fromSlot == 4 && toSlot == 3) || (fromSlot == 3 && toSlot == 4)) { numberOfPulses = 6910; }    // K
+  if ((fromSlot == 3 && toSlot == 1) || (fromSlot == 1 && toSlot == 3)) { numberOfPulses = 13830; }   // U
+  if ((fromSlot == 3 && toSlot == 2) || (fromSlot == 2 && toSlot == 3)) { numberOfPulses = 6940; }    // K
+  if ((fromSlot == 2 && toSlot == 1) || (fromSlot == 1 && toSlot == 2)) { numberOfPulses = 6900; }    // U
 
  // ALERT: It is possible that the magazine never get to slot 6, remember to put in loop!
   delay(50);
