@@ -1,6 +1,5 @@
 void loop() { 
-}
-/*
+
   // Move the magazine to an open slot.
   delay(100);
   int moveToSlot = openSlot(); 

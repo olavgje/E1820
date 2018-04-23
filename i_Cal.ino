@@ -4,6 +4,7 @@ This function calibrates the rigg.
 
 void calibration(){
   int var = 0;
+  int droneInPosition = dronePos();
   delay(50);
   griperLock(LOW, HIGH);
   delay(2000);
@@ -54,9 +55,8 @@ void calibration(){
       calibrateVar4();
       break;
   }
- 
 
-  
+   
 }
 
 

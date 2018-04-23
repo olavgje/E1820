@@ -3,7 +3,9 @@
 // The griper is under the magazine, and without a battery:
 
 void calibrateVar1() {
-  
+
+  int noBatterySlot;
+  int droneInPosition = dronePos();
   delay(50);
 
   while (digitalRead(limSwitchBack) == HIGH) {
@@ -24,11 +26,41 @@ void calibrateVar1() {
       digitalWrite(pulPinMagazine, LOW);   
       delayMicroseconds(300); 
     }     
-  }  
-
-  if (digitalRead(limSwitchBack) == LOW) { 
-    // Moves the griper to "standby"
-    griperMove(LOW, 33000, 3000, 3000);
   }
 
+  noBatterySlot = openSlot();
+  if (noBatterySlot == 6) {
+    if (droneInPosition == HIGH) {
+    delay(500);
+    droneLock(LOW); 
+  }
+    int mostChargedBattery = chargedBattery();
+    magazineMove(mostChargedBattery); 
+    griperMove(LOW, 15500, 3000, 3000);
+    delay(100);
+    // Griper is under the magazine, ready to pick up a battery. 
+
+    griperLock(LOW, HIGH);
+    delay(100);
+    griperMove(LOW, 32350, 13000, 8000);
+    delay(100);
+    griperLock(LOW, LOW);
+    delay(100);
+    griperMove(HIGH, 14850, 3000, 3000);    
+    // Griper is in standby position
+      
+    droneLock(HIGH); 
+    droneInPosition = dronePos();
+    while (droneInPosition == HIGH) {
+     droneInPosition = dronePos();
+     delay(500);
+    }
+
+
+ 
+   if ((noBatterySlot != 6) &&  (digitalRead(limSwitchBack) == LOW)) { 
+    // Moves the griper to "standby"
+    griperMove(LOW, 33000, 3000, 3000);
+    }
+  }
 }
