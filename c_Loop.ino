@@ -15,12 +15,11 @@ void loop() {
     droneLock(LOW);
     griperMove(LOW, 14850, 3000, 3000);
     delay(100);
-    inGriper = digitalRead(limSwitchInGriper);
+    int inGriper = digitalRead(limSwitchInGriper);
     delay(100);
     int var;
     if (inGriper == LOW) { var = 0; }
     if (inGriper == HIGH) { var = 1; }
-
 
     switch(var) {
       case 0: 
@@ -31,7 +30,6 @@ void loop() {
         griperLock(inGriper, LOW);
         delay(100);
         griperMove(HIGH, 15500, 3000, 3000); 
-        // Griper is all the way back.
         
         int mostChargedBattery;
         mostChargedBattery = chargedBattery();

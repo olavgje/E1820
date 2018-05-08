@@ -26,22 +26,22 @@ int sum3 = 0;
 int sum4 = 0;
 int sum5 = 0;
 
-  for (int i = 0; i < 11 ; i++) {
+  for (int i = 0; i <= 10 ; i++) {
     int a = analogRead(charger2);
     sum2 = sum2 + a;
   }
   
-  for (int i = 0; i < 11 ; i++) {
+  for (int i = 0; i <= 10 ; i++) {
     int b = analogRead(charger3);
     sum3 = sum3 + b;
   }
 
-  for (int i = 0; i < 11 ; i++) {
+  for (int i = 0; i <= 10 ; i++) {
     int c = analogRead(charger4);
     sum4 = sum4 + c;
   }
 
-  for (int i = 0; i < 11 ; i++) {
+  for (int i = 0; i <= 10 ; i++) {
     int d = analogRead(charger5);
     sum5 = sum5 + d;
   }

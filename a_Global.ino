@@ -38,10 +38,6 @@ int limSwitchBR = 28;
 // General
 int toSlot;
 int fromSlot;
-int batteryChanged;
-int lockBattery;
-int landingSensor;
-int inGriper;
 
 int charger1 = 60;            //analog pin 6
 int charger2 = 61;            //analog pin 7
