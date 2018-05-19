@@ -1,9 +1,11 @@
 /*
-This function controls the servos on the "LandingPlatform".
+This function controls the servos on the landing platform.
+
 Description intput:
 batteryChanged        LOW - Lock / HIGH - Release
+
 Description output:
-int droneLocking      HIGH - Drone locked / LOW - Drone 
+int droneLocking      HIGH - Drone locked / LOW - Drone released
 */
 
 int droneLock(int batteryChanged) {
