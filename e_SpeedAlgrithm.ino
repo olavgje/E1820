@@ -1,9 +1,10 @@
 /* 
-This function takes input for controlling the "Speed of the robots". 
-The stepper motor is rotating 1.8 degrees / step.
+This function uses input for controlling the speed of the robot as a sin-curve with limitations for max and min speed.
 
-Descrition for input:
+Descrition for inputs:
 
+totalDistance:  Distance for total travle in A times 100 millimeter, 140mm = 14 000
+i:              Number of run-through from function "d_GriperMove".
                 
 */ 
 
