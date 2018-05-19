@@ -1,5 +1,5 @@
 /* 
-This function takes input for controlling the griper robot. 
+This function uses input for controlling the griper robot. 
 
 Descrition for input:
 
