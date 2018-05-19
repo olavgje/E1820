@@ -1,12 +1,12 @@
 /* 
-This function takes input for controlling the "Griper Robot". 
+This function takes input for controlling the griper robot. 
 
 Descrition for input:
 
 movementDirection:   LOW - forward / HIGH - backward
-distance:            distance for total travle in X times 100 millimeter, 140 mm = 14 000 
-softStartDistance:   distance for soft start in X times 100 millimeter
-softEndDistance:     distance for soft end in X times 100 millimeter 
+distance:            Distance for total travle in A times 100 millimeter, 140 mm = 14 000 
+softStartDistance:   Distance for soft start in B times 100 millimeter
+softEndDistance:     Distance for soft end in C times 100 millimeter 
 
 */ 
 
@@ -57,10 +57,9 @@ void griperMove(int movementDirection, double totalDistance, double softStartDis
 
 /*
 Distances: 
-Standby position - drone :   14 850 pulses
-Standby position - magazine: 17 500 pulses
-Magazine - limitSwitchBack:  15 500 pulses
-
+Standby position - drone :                  14 850 pulses
+Standby position - magazine:                17 500 pulses
+Magazine - limitSwitchBack:                 15 500 pulses
 Standby position - limSwitchUmderMagazine2: 4100 pulses
 */
 
