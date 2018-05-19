@@ -1,5 +1,6 @@
 /*
-This function controls the sensors on the "LandingPlatform".
+This function controls the sensors on the landing platform.
+
 Description intput:
 int limSwitchFL:      HIGH - Waiting for drone FL / LOW - Drone in position FL
 int limSwitchFR:      HIGH - Waiting for drone FR / LOW - Drone in position FR
