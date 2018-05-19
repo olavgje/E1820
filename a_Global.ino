@@ -1,11 +1,11 @@
+/*
+This program is used in bachelorthesis "Automatic battery change on 250g drones" E1820 at NTNU in collaboration with FFI.
+*/ 
+
 #include <Servo.h>
 Servo gripRight; Servo gripLeft; 
 Servo landingPlatformFL; Servo landingPlatformFR;
 Servo landingPlatformBL; Servo landingPlatformBR;
-
-/*
-Discription of the program
-*/ 
 
 // GriperRobots:
 int pulPinGriper = 2;
